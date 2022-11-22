@@ -25,19 +25,21 @@ namespace CorectCodeLibrary
             {
                 return false;
             }
-            for (int i = 0; i < candidat.Length; i++)
+            int count2 = 0;
+            int count = 0;
+            int i = 0;
+            while (i <= 9)
             {
-                int count=0;
-                while(i==9)
-                {
-                 count = Convert.ToInt32(candidat[i]);
-                }
-                
-                int last = Convert.ToInt32(candidat[9]);
-                int count2 = 0;
+                count = Convert.ToInt32(Char.GetNumericValue(candidat[i]));
+
+              
+
                 count2 += count;
-                
-                    if (count2 % 10 == 0 && last == 0)
+                i++;
+            }
+            int last = Convert.ToInt32(Char.GetNumericValue(candidat.Last()));
+
+            if (count2 % 10 == 0 && last == 0)
                     {
                         return true;
                     }
