@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,12 @@ namespace CorectCodeLibrary
         /// <returns>
         /// возвращает true or false
         /// </returns>
-        public static bool IsCorrectCode(string candidate)
+        public static bool IsCorrectCode(string candidate, int num)
         {
-            var candidat = candidate.Where(x => char.IsDigit(x)).ToArray();
+            string[] readText = File.ReadAllLines(@"TestingData\input1.txt");
+            
+            
+            var candidat = readText.Select(x => int.Parse(x.ToString())).ToArray(); 
 
             if (candidat.Length < 10 || candidat.Any(x => char.IsLetter(x)) || candidat.Length >= 11)
             {
