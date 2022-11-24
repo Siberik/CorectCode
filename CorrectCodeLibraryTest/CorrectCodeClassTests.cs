@@ -14,9 +14,9 @@ namespace CorrectCodeLibraryTest
         public void IsCorrectCode_StringEmpty_ReturnedFalse()
         {
             //Arrange
-            string candidate = "";
+            int num =1 ;
             //Act
-            bool actual = CorrectCodeClass.IsCorrectCode(candidate);
+            bool actual = CorrectCodeClass.IsCorrectCode(num);
             //Assert
             Assert.IsFalse(actual);
         }
@@ -27,9 +27,9 @@ namespace CorrectCodeLibraryTest
         public void IsCorrectCode_SmallInt_ReturnedFalse()
         {
             //Arrange
-            string candidate = "123";
+            int num = 2;
             //Act
-            bool actual = CorrectCodeClass.IsCorrectCode(candidate);
+            bool actual = CorrectCodeClass.IsCorrectCode(num);
             //Assert
             Assert.IsFalse(actual);
         }
@@ -40,9 +40,9 @@ namespace CorrectCodeLibraryTest
         public void IsCorrectCode_UncorrectInt_ReturnedFalse()
         {
             //Arrange
-            string candidate = "123123123123123";
+            int num = 3;
             //Act
-            bool actual = CorrectCodeClass.IsCorrectCode(candidate);
+            bool actual = CorrectCodeClass.IsCorrectCode(num);
             //Assert
             Assert.IsFalse(actual);
         }
@@ -53,9 +53,9 @@ namespace CorrectCodeLibraryTest
         public void IsCorrectCode_UncorrectNotInt_ReturnedFalse()
         {
             //Arrange
-            string candidate = "strokasymb";
+            int num = 4;
             //Act
-            bool actual = CorrectCodeClass.IsCorrectCode(candidate);
+            bool actual = CorrectCodeClass.IsCorrectCode(num);
             //Assert
             Assert.IsFalse(actual);
         }
@@ -66,9 +66,9 @@ namespace CorrectCodeLibraryTest
         public void IsCorrectCode_IntDivide10_ReturnedTrue()
         {
             //Arrange
-            string candidate = "1234123400";
+            int num = 5;
             //Act
-            bool actual = CorrectCodeClass.IsCorrectCode(candidate);
+            bool actual = CorrectCodeClass.IsCorrectCode(num);
             //Assert
             Assert.IsTrue(actual);
         }
@@ -79,9 +79,9 @@ namespace CorrectCodeLibraryTest
         public void IsCorrectCode_IntNotDivide10_ReturnedFalse()
         {
             //Arrange
-            string candidate = "1234123401";
+            int num = 6;
             //Act
-            bool actual = CorrectCodeClass.IsCorrectCode(candidate);
+            bool actual = CorrectCodeClass.IsCorrectCode(num);
             //Assert
             Assert.IsFalse(actual);
         }
@@ -92,9 +92,9 @@ namespace CorrectCodeLibraryTest
         public void IsCorrectCode_IntNotDivide_ReturnedFalse()
         {
             //Arrange
-            string candidate = "1234123404";
+            int num = 7;
             //Act
-            bool actual = CorrectCodeClass.IsCorrectCode(candidate);
+            bool actual = CorrectCodeClass.IsCorrectCode(num);
             //Assert
             Assert.IsFalse(actual);
         }
@@ -105,9 +105,9 @@ namespace CorrectCodeLibraryTest
         public void IsCorrectCode_IntDivide3_ReturnedTrue()
         {
             //Arrange
-            string candidate = "3000030001";
+            int num = 8;
             //Act
-            bool actual = CorrectCodeClass.IsCorrectCode(candidate);
+            bool actual = CorrectCodeClass.IsCorrectCode(num);
             //Assert
             Assert.IsTrue(actual);
         }
@@ -118,9 +118,9 @@ namespace CorrectCodeLibraryTest
         public void IsCorrectCode_IntDivide_ReturnedTrue()
         {
             //Arrange
-            string candidate = "3000130009";
+            int num = 9;
             //Act
-            bool actual = CorrectCodeClass.IsCorrectCode(candidate);
+            bool actual = CorrectCodeClass.IsCorrectCode(num);
             //Assert
             Assert.IsTrue(actual);
         }

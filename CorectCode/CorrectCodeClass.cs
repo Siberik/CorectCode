@@ -18,14 +18,18 @@ namespace CorectCodeLibrary
         /// <returns>
         /// возвращает true or false
         /// </returns>
-        public static bool IsCorrectCode(string candidate, int num)
+        public static bool IsCorrectCode( int num)
         {
-            string[] readText = File.ReadAllLines(@"TestingData\input1.txt");
+            string[] readText = File.ReadAllLines(@"testFolder\input1.txt");
             
-            
-            var candidat = readText.Select(x => int.Parse(x.ToString())).ToArray(); 
+            var s = readText[num-1];
+            if (s.Any(x => char.IsLetter(x)))
+            {
+                return false;
+            }
+            var candidat = s.Select(x => int.Parse(x.ToString())).ToArray();
 
-            if (candidat.Length < 10 || candidat.Any(x => char.IsLetter(x)) || candidat.Length >= 11)
+            if (candidat.Length < 10 || candidat.Length >= 11)
             {
                 return false;
             }
@@ -34,14 +38,14 @@ namespace CorectCodeLibrary
             int i = 0;
             while (i < 9)
             {
-                count = Convert.ToInt32(Char.GetNumericValue(candidat[i]));
+                count = candidat[i];
 
 
 
                 count2 += count;
                 i++;
             }
-            int last = Convert.ToInt32(Char.GetNumericValue(candidat.Last()));
+            int last = candidat.Last();
 
             if (count2 % 10 == 0 && last == 0)
                     {
