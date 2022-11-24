@@ -19,20 +19,20 @@ namespace CorectCodeLibrary
         /// </returns>
         public static bool IsCorrectCode(string candidate)
         {
-            var candidat = candidate.Where(x=>char.IsDigit(x)).ToArray();
+            var candidat = candidate.Where(x => char.IsDigit(x)).ToArray();
 
-            if (candidat.Length < 10 || candidat.Any(x=>char.IsLetter(x))||candidat.Length>=11)
+            if (candidat.Length < 10 || candidat.Any(x => char.IsLetter(x)) || candidat.Length >= 11)
             {
                 return false;
             }
             int count2 = 0;
             int count = 0;
             int i = 0;
-            while (i <= 9)
+            while (i < 9)
             {
                 count = Convert.ToInt32(Char.GetNumericValue(candidat[i]));
 
-              
+
 
                 count2 += count;
                 i++;
@@ -57,7 +57,7 @@ namespace CorectCodeLibrary
                     }
                 
             }
-            return false;
+            
         }
     }
-}
+
