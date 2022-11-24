@@ -12,8 +12,8 @@ namespace CorectCodeLibrary
         /// <summary>
         /// Проверка "кода" на правильность введённых чисел
         /// </summary>
-        /// <param name="candidate">
-        /// Строка, содержащая "код"
+        ///<param name="num">
+        ///Обозначение откуда мы берём тестируемую строку
         /// </param>
         /// <returns>
         /// возвращает true or false
